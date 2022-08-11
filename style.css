@@ -1,0 +1,153 @@
+
+body{
+    margin: 0;
+}
+.header, .footer{
+    background-color: #1F2937;  
+    color:#E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.main-image{
+    width: 400px;
+    height: 200px;
+    /* This is a placeholder for an image */
+    background: grey;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background: #3882F6;
+    color: white;
+    padding: 5px 20px;
+    font-weight: 600;
+    border-color: white;
+    border-radius:8px;
+}
+
+.first-sign{
+    border-color: #1F2937;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    margin:0;
+    padding: 0;
+    font-size: 18px;
+    gap: 16px
+}
+
+a{
+    text-decoration:none;
+    color:#E5E7EB;
+}
+
+.logo{
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+.mini-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+.container{
+    flex-wrap: wrap;
+    width: 500px;
+    height: 180px;
+}
+.first-section{
+    font-size: 18px;
+    color: #E5E7EB;
+    padding: 150px 100px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.first-title{
+    font-size: 48px;
+    font-weight: 600;
+    color: #F9FAF8;
+}
+
+.second-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 40px;
+}
+
+.second-section{
+    text-align: center;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.second-container{
+    display: flex;
+    justify-content: center;
+    gap: 52px;
+}
+
+.box{
+    max-width:200px;
+}
+
+.third-section{
+    background-color: #E5E7EB;
+    padding: 100px 150px;
+    font-size: 36px;
+    font-style: italic;
+    color: #393c41;
+}
+
+.source {
+    display: flex;
+    justify-content: flex-end;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+
+}
+
+.fourth-section{
+    background-color: #3882F6;
+    color: white;
+    margin: 40px 100px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+}
+
+.fourth-title{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+
+.footer{
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+

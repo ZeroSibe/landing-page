@@ -148,5 +148,12 @@ a{
     justify-content: center;
 }
 
+/* Function Library style*/
+
+input{
+    font-size: 2em;
+    margin: 10px 1px 0;
+}
+
 
 

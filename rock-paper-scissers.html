@@ -24,15 +24,44 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
-    <p>See if you can beat the computer in a game of rock paper and scissors. You'll have five rounds, enter your choice of weapon, rock, paper or scissors? </p>
+   
+    <p>See if you can beat the computer.</p>
+    <p>You have <span class = 'round'>5</span> rounds. </p>
+    <p> Computer Score: <span class = 'compScore'> 0</span></p>
+    <p> Your Score: <span class = 'yourScore'> 0</span></p>
+    <p> Click your choice of weapon: </p>
+    
+    <button id = 'rock'>Rock</button>
+    <button id = 'paper'>Paper</button>
+    <button id = 'scissors'>Scissors</button>
+
+    <div class = 'results'></div>
+
+    
+    <div class = 'runningScore'></div>
+   
+    <div class = 'score'></div>
+    <div class = 'fin'></div>
 
 </body>
 
     <script>
         //<script src="game.js"></scipt>
         //to put this in a seperate game.js file once styling begins
+        //to start the game type game() in the console.
         
         const choice = ['Rock' , 'Paper' , 'Scissors'];
+        const rock = document.querySelector('#rock');
+        const paper = document.querySelector('#paper');
+        const scissors = document.querySelector('#scissors');
+        const compChoice = document.querySelector('.results');
+        const rounds = document.querySelector('.round');
+        const runningScore = document.querySelector('.runningScore');
+        const score = document.querySelector('.score');
+        const buttons = document.querySelectorAll('button');
+        const fin = document.querySelector('.fin');
+        const compScore = document.querySelector('.compScore');
+        const yourScore = document.querySelector('.yourScore');
            
         function getComputerChoice () {
             let randomChoice = choice[Math.floor(Math.random()*choice.length)]
@@ -42,34 +71,36 @@
         let gameCount = 0;
         let playerScore = 0;
         let computerScore = 0;
+        let turns = 5;
 
-        function game() {
+    function playGame(e) {
+    
+    let playerSelection = this.id; //name of button 
+    console.log(`You have picked ${playerSelection}`);
+    let computerSelection = getComputerChoice().toLowerCase();
+    compChoice.textContent = (`Computer has picked ${computerSelection}.`);
+    
+    runningScore.textContent =  (`${playRound(playerSelection, computerSelection)}`);
+    turns--;
+    rounds.textContent = turns; 
+    compScore.textContent = computerScore;
+    yourScore.textContent = playerScore;
+   
 
-        for (let i = 0; i<5; i++) {
-
-        const input = prompt("Please enter your choice of weapon: Rock, Paper or Scissors? ", ''); 
-        let playerSelection = input.toLowerCase();
-        console.log(`You have picked ${playerSelection}`);
-
-        let computerSelection = getComputerChoice().toLowerCase();
-        console.log(`The Computer has picked ${computerSelection}`);
-       
-        console.log(playRound(playerSelection, computerSelection));
-        gameCount++;
-        let turns = 5 - gameCount;
-           
-        console.log(`Your Score: ${playerScore}  Computer Score: ${computerScore}`); 
-        console.log(`You have ${turns} turns left`); 
-
-    }
-
-    if (playerScore > computerScore) {
-            console.log('CONGRAGULATIONS YOU HAVE WON!');
-        } else {
-            console.log('GAME OVER!!! YOU LOSE');
+    if(turns <= 0 && playerScore > computerScore){
+         fin.textContent = ('CONGRAGULATIONS YOU HAVE WON!');
+         //score.textContent = (`Your Score: ${playerScore}. Computer Score: ${computerScore}`);
+        } else if (turns <= 0 && playerScore < computerScore) {
+            fin.textContent = ('GAME OVER!!! YOU LOSE');
+            //score.textContent = (`Your Score: ${playerScore} Computer Score: ${computerScore}`);
         }
 
-}
+        if (turns < 0) {
+            localStorage.clear(); //clears the local storage
+            location.reload(); //refreshes the window
+        }
+    }
+
 
     function playRound(playerSelection, computerSelection) {
 
@@ -79,8 +110,7 @@ switch (true) {
         break;
     case (playerSelection == 'rock' && computerSelection == 'scissors'):
         playerScore++;
-        return ("You Win! Rock beats Scissors");
-        
+        return ("You Win! Rock beats Scissors"); 
         break;
     case (playerSelection == 'rock' && computerSelection == 'paper'):
         computerScore++;
@@ -106,7 +136,8 @@ switch (true) {
         return ('Oops...something went wrong...try again?')
 }
 }
- 
+
+    buttons.forEach(button => button.addEventListener('click', playGame));
 
     </script>
     

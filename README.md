@@ -1,2 +1,2 @@
 # landing-page
-This will be a webpage template designed from a reference.
+This will be a fun webpage showcasing a few webpages and games using HTML, CSS and JS. 

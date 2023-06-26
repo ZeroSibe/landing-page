@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "sketch.css">
+        <link rel = "stylesheet" href = "reset.css">
+        <title>Etch-A-Sketch</title>
+    </head>
+    <body>
+        
+        <div id = "container">
+            <h1 class = "heading ">Etch A Sketch</h1>
+            <div class = "grid">
+                <div class = "gridPanel"></div>
+                <div class = "boxLeft">
+                    <button onclick = "changeColor('white')" >Erasor</button>
+                    <button onclick = "changeColor('Black')" >Black</button>
+                    <button onclick = "changeColor('Gray')" >Gray</button>
+                    <button onclick = "changeColor('random')" >Rainbow</button>     
+                </div>  
+                <div class = "size">
+                   Pixel Size <input class = 'slide' type = "range" min = "2" max = "100" value ="16" step = "1" onchange="changeSize(this.value)" >
+                   Largest to Smallest
+                </div>
+                <div class = "boxRight">
+                    <button onclick="reset()">Reset</button>     
+                </div>
+            </div>
+        </div>
+        <script src = "app.js"></script>
+    </body>
+</html>

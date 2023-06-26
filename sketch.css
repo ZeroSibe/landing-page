@@ -1,0 +1,98 @@
+/* etch-a-sketch */
+
+html{
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: hsl(54, 87%, 78%);
+    background-size: cover;
+    font-family: sans-serif;
+  }
+
+.gridPanel {
+    width:800px;
+    height: 600px;
+    display: grid;
+    box-shadow: 1px 1px 1px 1px rgb(108, 108, 108);
+}
+
+#container {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+    background: rgb(166, 222, 222);
+    border-radius: 15px;
+    padding: 30px 80px;
+    border-color: rgba(255, 255, 255, 0.442);
+    box-shadow: 1px 0px 0px 1px rgb(108, 108, 108);
+}
+
+.heading {
+    font-family: Brush Script MT;
+    font-size: 50px;
+    color: #fffffb;
+    text-align: center;
+  }
+
+
+  button{
+    display: inline-block;
+    background: #FFED66;
+    color: gray;
+    padding: 20px 20px;
+    font-weight: 600;
+    border-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 0 0 1px rgb(108, 108, 108);
+    margin-inline: 10px;
+}
+
+.boxRight{
+    padding-left: 80%;
+    padding-top: 10px;
+}
+
+.boxLeft{
+    padding: 10px;
+}
+
+.slide {
+    /* removing default appearance */
+     -webkit-appearance: none;
+     appearance: none;
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+    outline: none;
+    background: #FFED66;
+    transition: 0.2s;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 85, 0, 0.235);
+}
+
+/*thumb slider*/
+input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 50px;
+    width: 40px;
+    background-color: #ffffff59;
+    border-radius: 15px 50px 30px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 1px 1px rgb(108, 108, 108);
+  }
+
+  .size {
+    color: white;
+    font-family: Brush Script MT;
+    font-size: 25px;
+    text-align: center;
+  }
